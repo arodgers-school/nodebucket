@@ -11,9 +11,12 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SignInComponent } from "./pages/sign-in/sign-in.component";
+import { MatCardModule } from "@angular/material/card";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, BaseLayoutComponent, AuthLayoutComponent, SignInComponent],
@@ -28,6 +31,9 @@ import { SignInComponent } from "./pages/sign-in/sign-in.component";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -17,7 +17,7 @@ export class SignInGuard implements CanActivate {
     if (sessionUser) {
       return true;
     } else {
-      this.router.navigate(["/session/sign-in"]);
+      this.router.navigate(["/session/signin"]);
       return false;
     }
   }
