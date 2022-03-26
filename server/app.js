@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
+const Employee = require("./models/employee");
 require("dotenv").config();
 
 /**
@@ -52,9 +53,26 @@ mongoose
  * API(s) go here...
  */
 
-//app.get('/api/employees/:empId', async (req, res)) => {
-
-//}
+app.get("/api/employees/:empId", async (req, res) => {
+  try {
+    Employee.findOne({ empId: req.params.empId }, function (err, employee) {
+      if (err) {
+        console.log(err);
+        res.status(500).send({
+          message: "Internal server error",
+        });
+      } else {
+        console.log(employee);
+        res.json(employee);
+      }
+    });
+  } catch (e) {
+    console.log(e);
+    res.status(500).send({
+      message: "Internal server error",
+    });
+  }
+});
 
 /**
  * Create and start server
