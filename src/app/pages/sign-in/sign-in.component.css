@@ -1,11 +1,7 @@
 .signin-container {
   width: 30%;
-  margin: 5% auto;
-}
-
-.signin-container > mat-card-title,
-mat-card-subtitle {
   text-align: center;
+  margin: 5% auto;
 }
 
 mat-form-field {
@@ -13,5 +9,8 @@ mat-form-field {
 }
 
 .submit-button {
+  display: block;
+  margin-left: 25%;
+  margin-right: 25%;
   max-width: 50%;
 }

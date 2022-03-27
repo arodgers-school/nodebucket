@@ -1,3 +1,16 @@
+/*
+Title: 
+    WEB450 - nobucket: Sprint 1
+Author: 
+    Adam Rodgers
+Date: 
+    3/27/2022
+Modified By: Adam Rodgers
+Description: nodebucket
+Resources:
+    Bellevue University WEB450 Github Repo
+*/
+
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
@@ -28,7 +41,7 @@ export class SignInComponent implements OnInit {
         this.cookieService.set("session_user", empId, 1);
         this.router.navigate(["/"]);
       } else {
-        this.error = "You enter an invalid employee ID";
+        this.error = "You entered an invalid employee ID";
       }
     });
   }

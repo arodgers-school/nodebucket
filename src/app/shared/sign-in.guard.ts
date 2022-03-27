@@ -1,3 +1,16 @@
+/*
+Title: 
+    WEB450 - nobucket: Sprint 1
+Author: 
+    Adam Rodgers
+Date: 
+    3/27/2022
+Modified By: Adam Rodgers
+Description: nodebucket
+Resources:
+    Bellevue University WEB450 Github Repo
+*/
+
 import { Injectable } from "@angular/core";
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from "@angular/router";
 import { Observable } from "rxjs";

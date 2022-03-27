@@ -1,3 +1,16 @@
+/*
+Title: 
+    WEB450 - nobucket: Sprint 1
+Author: 
+    Adam Rodgers
+Date: 
+    3/27/2022
+Modified By: Adam Rodgers
+Description: nodebucket
+Resources:
+    Bellevue University WEB450 Github Repo
+*/
+
 import { HomeComponent } from "./pages/home/home.component";
 import { BaseLayoutComponent } from "./shared/base-layout/base-layout.component";
 import { NgModule } from "@angular/core";
