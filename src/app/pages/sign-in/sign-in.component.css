@@ -1,0 +1,17 @@
+.signin-container {
+  width: 30%;
+  margin: 5% auto;
+}
+
+.signin-container > mat-card-title,
+mat-card-subtitle {
+  text-align: center;
+}
+
+mat-form-field {
+  width: 50%;
+}
+
+.submit-button {
+  max-width: 50%;
+}
