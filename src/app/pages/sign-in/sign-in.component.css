@@ -14,3 +14,7 @@ mat-form-field {
   margin-right: 25%;
   max-width: 50%;
 }
+
+mat-card-subtitle {
+  color: red;
+}

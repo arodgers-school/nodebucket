@@ -1,8 +1,4 @@
 <div fxLayout="column">
-  <div fxFlex *ngIf="error">
-    {{ error }}
-  </div>
-
   <mat-card fxFlex class="mat-elevation-z8 signin-container">
     <mat-card-title>
       <img height="80px" width="auto" src="../../../assets/bucket-blue.svg" />
@@ -10,7 +6,7 @@
       nodebucket Employee Sign-in Page
     </mat-card-title>
     <br />
-    <mat-card-subtitle> You must enter a valid ID </mat-card-subtitle>
+    <mat-card-subtitle *ngIf="error"> {{ error }} </mat-card-subtitle>
     <br />
     <div class="form-center">
       <form [formGroup]="form" (ngSubmit)="login(); form.reset()" class="signin-form">
