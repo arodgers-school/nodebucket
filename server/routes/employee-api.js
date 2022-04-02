@@ -24,7 +24,7 @@ router.get("/:empId", async (req, res) => {
 
 router.get("/:empId/tasks", async (req, res) => {
   try {
-    Employee.findOne({ empId: req.params.empId }, "empId todo done", function (err, employee) {
+    Employee.findOne({ empId: req.params.empId }, "empId task.taskName", function (err, employee) {
       if (err) {
         res.status(500).send({
           message: "Internal server error: " + err.message,

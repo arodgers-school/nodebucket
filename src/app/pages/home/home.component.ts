@@ -26,6 +26,7 @@ import { CreateTaskDialogComponent } from "src/app/shared/create-task-dialog/cre
 })
 export class HomeComponent implements OnInit {
   employee: Employee;
+  task: Item[];
   todo: Item[];
   done: Item[];
   empId: number;
@@ -35,14 +36,15 @@ export class HomeComponent implements OnInit {
 
     this.taskService.findAllTasks(this.empId).subscribe(
       (res) => {
+        //console.log("test " + res);
         this.employee = res;
       },
       (err) => {
         console.log(err);
       },
       () => {
-        this.todo = this.employee.todo;
-        this.done = this.employee.done;
+        this.todo = this.employee.task;
+        //this.done = this.employee.done;
       }
     );
   }
