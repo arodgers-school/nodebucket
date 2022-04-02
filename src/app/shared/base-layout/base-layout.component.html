@@ -6,9 +6,25 @@
       <div class="navbar-container">
         <!-- logo -->
         <button class="logo" routerLink="/" mat-button>nodebucket</button>
+        <button class="navbar-link" mat-button>About Us</button>
+        <button class="navbar-link" routerLink="/contact" mat-button>Contact</button>
+      </div>
 
-        <button class="navbar-link" routerLink="/" mat-button>Home</button>
-        <button class="navbar-link" routerLink="contact" mat-button>Contact</button>
+      <div fxFlex></div>
+
+      <div *ngIf="isLoggedIn">
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="User Profile Menu">
+          <mat-icon>perm_identity</mat-icon>
+        </button>
+
+        <mat-menu #profileMenu>
+          <p style="padding: 10px">Signed in as {{ name }}</p>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="signOut()">
+            <mat-icon>logout</mat-icon>
+            <span>Signout</span>
+          </button>
+        </mat-menu>
       </div>
     </mat-toolbar>
   </nav>
