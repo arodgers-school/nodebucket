@@ -12,6 +12,7 @@ router.get("/:empId", async (req, res) => {
         });
       } else {
         res.json(employee);
+        console.log("first get");
       }
     });
   } catch (e) {
@@ -30,11 +31,43 @@ router.get("/:empId/tasks", async (req, res) => {
         });
       } else {
         res.json(employee);
+        console.log("second get");
       }
     });
   } catch (e) {
     res.status(500).send({
       message: "Internal server error: " + e.message,
+    });
+  }
+});
+
+router.post("/:empId/tasks", async (req, res) => {
+  try {
+    Employee.findOne({ empId: req.params.empId }, function (err, employee) {
+      if (err) {
+        res.status(500).send({
+          message: "Internal server error: " + err.message,
+        });
+      } else {
+        const newItem = {
+          text: req.body.text,
+        };
+        employee.todo.push(newItem);
+        employee.save(function (err, updatedEmployee) {
+          if (err) {
+            res.status(500).send({
+              message: "Internal server error: " + err.message,
+            });
+          } else {
+            res.json(updatedEmployee);
+            console.log("first post");
+          }
+        });
+      }
+    });
+  } catch (e) {
+    res.status(500).send({
+      message: "Internal server error: " + err.message,
     });
   }
 });

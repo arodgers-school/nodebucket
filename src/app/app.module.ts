@@ -34,6 +34,7 @@ import { NotFoundComponent } from "./pages/not-found/not-found.component";
 import { ContactComponent } from "./pages/contact/contact.component";
 import { CreateTaskDialogComponent } from "./shared/create-task-dialog/create-task-dialog.component";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatMenuModule } from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
