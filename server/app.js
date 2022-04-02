@@ -20,7 +20,9 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
-const Employee = require("./models/employee");
+const EmployeeAPI = require("./routes/employee-api");
+
+// Using NPM package 'dotenv' to avoid exposing username/password on Github
 require("dotenv").config();
 
 /**
@@ -38,7 +40,7 @@ app.use("/", express.static(path.join(__dirname, "../dist/nodebucket")));
  */
 const port = process.env.PORT || 3000; // server port
 
-// Using NPM package 'dotenv' to avoid exposing username/password on Github
+// Mongo database connection string with dotenv
 const conn =
   "mongodb+srv://" +
   process.env.ATLAS_USER +
@@ -66,26 +68,7 @@ mongoose
  * API(s) go here...
  */
 
-app.get("/api/employees/:empId", async (req, res) => {
-  try {
-    Employee.findOne({ empId: req.params.empId }, function (err, employee) {
-      if (err) {
-        console.log(err);
-        res.status(500).send({
-          message: "Internal server error",
-        });
-      } else {
-        console.log(employee);
-        res.json(employee);
-      }
-    });
-  } catch (e) {
-    console.log(e);
-    res.status(500).send({
-      message: "Internal server error",
-    });
-  }
-});
+app.use("/api/employees", EmployeeAPI);
 
 /**
  * Create and start server
