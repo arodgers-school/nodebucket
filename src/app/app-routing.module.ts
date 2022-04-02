@@ -18,6 +18,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { SignInGuard } from "./shared/sign-in.guard";
 import { AuthLayoutComponent } from "./shared/auth-layout/auth-layout.component";
 import { SignInComponent } from "./pages/sign-in/sign-in.component";
+import { NotFoundComponent } from "./pages/not-found/not-found.component";
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
         component: SignInComponent,
       },
     ],
+  },
+  {
+    path: "**",
+    component: NotFoundComponent,
   },
 ];
 

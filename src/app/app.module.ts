@@ -30,9 +30,23 @@ import { SignInComponent } from "./pages/sign-in/sign-in.component";
 import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
+import { NotFoundComponent } from "./pages/not-found/not-found.component";
+import { ContactComponent } from "./pages/contact/contact.component";
+import { CreateTaskDialogComponent } from "./shared/create-task-dialog/create-task-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, BaseLayoutComponent, AuthLayoutComponent, SignInComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    BaseLayoutComponent,
+    AuthLayoutComponent,
+    SignInComponent,
+    NotFoundComponent,
+    ContactComponent,
+    CreateTaskDialogComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -47,6 +61,8 @@ import { MatInputModule } from "@angular/material/input";
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialog,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
