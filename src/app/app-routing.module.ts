@@ -19,7 +19,9 @@ import { SignInGuard } from "./shared/sign-in.guard";
 import { AuthLayoutComponent } from "./shared/auth-layout/auth-layout.component";
 import { SignInComponent } from "./pages/sign-in/sign-in.component";
 import { NotFoundComponent } from "./pages/not-found/not-found.component";
+import { ContactComponent } from "./pages/contact/contact.component";
 
+// Routes
 const routes: Routes = [
   {
     path: "",
@@ -31,8 +33,8 @@ const routes: Routes = [
         canActivate: [SignInGuard],
       },
       {
-        path: "home",
-        component: HomeComponent,
+        path: "contact",
+        component: ContactComponent,
         canActivate: [SignInGuard],
       },
     ],
@@ -47,6 +49,8 @@ const routes: Routes = [
       },
     ],
   },
+  
+  // 404 Handler
   {
     path: "**",
     component: NotFoundComponent,
