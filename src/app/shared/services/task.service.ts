@@ -12,9 +12,13 @@ export class TaskService {
     return this.http.get("/api/employees/" + empId + "/tasks");
   }
 
+  // findTodoTasks(empId: number): Observable<any> {
+  //   return this.http.get("/api/employees" + empId + "/tasks");
+  // }
+
   createTask(empId: number, task: string): Observable<any> {
     return this.http.post("/api/employees/" + empId + "/tasks", {
-      text: task,
+      taskName: task,
     });
   }
 }

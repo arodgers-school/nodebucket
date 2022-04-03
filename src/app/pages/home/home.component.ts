@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
       },
       () => {
         this.todo = this.employee.task;
-        //this.done = this.employee.done;
+        this.done = this.employee.task;
       }
     );
   }
@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
           },
           () => {
             this.todo = this.employee.task;
-            //this.done = this.employee.done;
+            this.done = this.employee.task;
           }
         );
       }

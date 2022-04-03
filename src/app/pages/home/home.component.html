@@ -2,10 +2,7 @@
   <div fxFlex>
     <h1 class="title">
       Welcome to WEB 450's - nodebucket Project <br />
-      <span class="subtitle">
-        Pay close attention to the requirements, double and triple check the files for code attribution, and do not wait unitl the last minute to
-        begin working on each item.
-      </span>
+      <span class="subtitle"> </span>
     </h1>
   </div>
 
@@ -25,7 +22,7 @@
           <mat-card-content>
             <div class="task-column">
               <div *ngFor="let item of todo">
-                <mat-card class="mat-elevation-z0 task-card">
+                <mat-card class="mat-elevation-z0 task-card" *ngIf="item.status === 'todo'">
                   <mat-card-content>
                     <div fxLayout="row">
                       <div fxFlex>
@@ -45,12 +42,14 @@
           <mat-card-content>
             <div class="task-column">
               <div *ngFor="let item of done">
-                <mat-card class="mat-elevation-z0 task-card">
-                  <div fxLayout="row">
-                    <div fxFlex>
-                      {{ item.taskName }}
+                <mat-card class="mat-elevation-z0 task-card" *ngIf="item.status === 'completed'">
+                  <mat-card-content>
+                    <div fxLayout="row">
+                      <div fxFlex>
+                        {{ item.taskName }}
+                      </div>
                     </div>
-                  </div>
+                  </mat-card-content>
                 </mat-card>
               </div>
             </div>

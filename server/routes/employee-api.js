@@ -24,14 +24,14 @@ router.get("/:empId", async (req, res) => {
 
 router.get("/:empId/tasks", async (req, res) => {
   try {
-    Employee.findOne({ empId: req.params.empId }, "empId task.taskName", function (err, employee) {
+    Employee.findOne({ empId: req.params.empId }, "empId task.taskName task.status", function (err, employee) {
       if (err) {
         res.status(500).send({
           message: "Internal server error: " + err.message,
         });
       } else {
         res.json(employee);
-        console.log("second get");
+        console.log(employee);
       }
     });
   } catch (e) {
@@ -53,6 +53,8 @@ router.post("/:empId/tasks", async (req, res) => {
           taskName: req.body.taskName,
           status: "todo",
         };
+        console.log(req.body.taskName);
+        console.log(newItem);
         employee.task.push(newItem);
         employee.save(function (err, updatedEmployee) {
           if (err) {
