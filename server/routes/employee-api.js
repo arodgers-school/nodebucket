@@ -50,9 +50,10 @@ router.post("/:empId/tasks", async (req, res) => {
         });
       } else {
         const newItem = {
-          text: req.body.text,
+          taskName: req.body.taskName,
+          status: "todo",
         };
-        employee.todo.push(newItem);
+        employee.task.push(newItem);
         employee.save(function (err, updatedEmployee) {
           if (err) {
             res.status(500).send({

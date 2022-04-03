@@ -1,4 +1,5 @@
 export interface Item {
-    _id: string;
-    text: string;
+  _id: string;
+  taskName: string;
+  //probably the problem
 }

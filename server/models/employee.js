@@ -20,7 +20,7 @@ let employeeSchema = new Schema(
     empId: { type: String, unique: true, dropDups: true },
     firstName: { type: String },
     lastName: { type: String },
-    task: [ItemDocument],
+    task: [{ taskName: String }],
   },
   { collection: "employees" }
 );

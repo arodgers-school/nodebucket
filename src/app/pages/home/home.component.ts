@@ -66,8 +66,8 @@ export class HomeComponent implements OnInit {
             console.log(err);
           },
           () => {
-            this.todo = this.employee.todo;
-            this.done = this.employee.done;
+            this.todo = this.employee.task;
+            //this.done = this.employee.done;
           }
         );
       }
