@@ -1,8 +1,22 @@
+/*
+Title: 
+    WEB450 - nobucket: Sprint 2
+Author: 
+    Adam Rodgers
+Date: 
+    4/3/2022
+Modified By: Adam Rodgers
+Description: nodebucket
+Resources:
+    Bellevue University WEB450 Github Repo
+*/
+
 const express = require("express");
 const Employee = require("../models/employee");
 
 const router = express.Router();
 
+// Find Employee API
 router.get("/:empId", async (req, res) => {
   try {
     Employee.findOne({ empId: req.params.empId }, function (err, employee) {
@@ -12,7 +26,6 @@ router.get("/:empId", async (req, res) => {
         });
       } else {
         res.json(employee);
-        console.log("first get");
       }
     });
   } catch (e) {
@@ -22,6 +35,7 @@ router.get("/:empId", async (req, res) => {
   }
 });
 
+// Find all tasks API
 router.get("/:empId/tasks", async (req, res) => {
   try {
     Employee.findOne({ empId: req.params.empId }, "empId task.taskName task.status", function (err, employee) {
@@ -31,7 +45,6 @@ router.get("/:empId/tasks", async (req, res) => {
         });
       } else {
         res.json(employee);
-        console.log(employee);
       }
     });
   } catch (e) {
@@ -41,6 +54,7 @@ router.get("/:empId/tasks", async (req, res) => {
   }
 });
 
+// Create new task API
 router.post("/:empId/tasks", async (req, res) => {
   try {
     Employee.findOne({ empId: req.params.empId }, function (err, employee) {
@@ -53,8 +67,6 @@ router.post("/:empId/tasks", async (req, res) => {
           taskName: req.body.taskName,
           status: "todo",
         };
-        console.log(req.body.taskName);
-        console.log(newItem);
         employee.task.push(newItem);
         employee.save(function (err, updatedEmployee) {
           if (err) {
@@ -63,7 +75,6 @@ router.post("/:empId/tasks", async (req, res) => {
             });
           } else {
             res.json(updatedEmployee);
-            console.log("first post");
           }
         });
       }
