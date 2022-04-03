@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HomeComponent } from "./pages/home/home.component";
 import { BaseLayoutComponent } from "./shared/base-layout/base-layout.component";
 import { AuthLayoutComponent } from "./shared/auth-layout/auth-layout.component";
+import { FlexModule } from "@angular/flex-layout";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
@@ -51,6 +52,7 @@ import { MatMenuModule } from "@angular/material/menu";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FlexModule,
     FlexLayoutModule,
     MatToolbarModule,
     MatButtonModule,
