@@ -1,14 +1,17 @@
 /*
 Title: 
-    WEB450 - nobucket: Sprint 2
+    WEB450 - nobucket: Sprint 3
 Author: 
     Adam Rodgers
 Date: 
-    4/3/2022
+    4/10/2022
 Modified By: Adam Rodgers
 Description: nodebucket
 Resources:
     Bellevue University WEB450 Github Repo
+    https://material.angular.io/cdk/drag-drop/overview
+    https://primefaces.org/primeng/#/toast
+    https://primefaces.org/primeng/#/confirmdialog
 */
 
 import { BrowserModule } from "@angular/platform-browser";
@@ -36,6 +39,13 @@ import { ContactComponent } from "./pages/contact/contact.component";
 import { CreateTaskDialogComponent } from "./shared/create-task-dialog/create-task-dialog.component";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatMenuModule } from "@angular/material/menu";
+import { DragDropModule } from "@angular/cdk/drag-drop";
+import { ConfirmDialogModule } from "primeng/confirmdialog";
+import { ConfirmationService } from "primeng/api";
+import { InputTextModule } from "primeng/inputtext";
+import { ToastModule } from "primeng/toast";
+import { MessageService } from "primeng/api";
+import { AboutUsComponent } from "./pages/about-us/about-us.component";
 
 @NgModule({
   declarations: [
@@ -47,6 +57,7 @@ import { MatMenuModule } from "@angular/material/menu";
     NotFoundComponent,
     ContactComponent,
     CreateTaskDialogComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,8 +76,12 @@ import { MatMenuModule } from "@angular/material/menu";
     MatInputModule,
     MatDialogModule,
     MatMenuModule,
+    DragDropModule,
+    ConfirmDialogModule,
+    InputTextModule,
+    ToastModule,
   ],
-  providers: [],
+  providers: [ConfirmationService, MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

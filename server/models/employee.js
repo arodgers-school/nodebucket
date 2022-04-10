@@ -1,14 +1,15 @@
 /*
 Title: 
-    WEB450 - nobucket: Sprint 2
+    WEB450 - nobucket: Sprint 3
 Author: 
     Adam Rodgers
 Date: 
-    4/3/2022
+    4/10/2022
 Modified By: Adam Rodgers
 Description: nodebucket
 Resources:
     Bellevue University WEB450 Github Repo
+    WEB450 Zoom SCRUM Meetings
 */
 
 const mongoose = require("mongoose");
@@ -20,7 +21,9 @@ let employeeSchema = new Schema(
     empId: { type: String, unique: true, dropDups: true },
     firstName: { type: String },
     lastName: { type: String },
-    task: [ItemDocument],
+    todo: [ItemDocument],
+    doing: [ItemDocument],
+    done: [ItemDocument],
   },
   { collection: "employees" }
 );

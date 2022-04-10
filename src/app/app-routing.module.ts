@@ -20,6 +20,7 @@ import { AuthLayoutComponent } from "./shared/auth-layout/auth-layout.component"
 import { SignInComponent } from "./pages/sign-in/sign-in.component";
 import { NotFoundComponent } from "./pages/not-found/not-found.component";
 import { ContactComponent } from "./pages/contact/contact.component";
+import { AboutUsComponent } from "./pages/about-us/about-us.component";
 
 // Routes
 const routes: Routes = [
@@ -35,6 +36,11 @@ const routes: Routes = [
       {
         path: "contact",
         component: ContactComponent,
+        canActivate: [SignInGuard],
+      },
+      {
+        path: "about",
+        component: AboutUsComponent,
         canActivate: [SignInGuard],
       },
     ],
